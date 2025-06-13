@@ -1,0 +1,26 @@
+[
+  {
+    "InHand": false,
+    "Discarder": false,
+    "CardColour": "Forest",
+    "CardType": "Creature",
+    "Damage": 3,
+    "Cost": 2
+  },
+  {
+    "InHand": false,
+    "Discarder": false,
+    "CardColour": "Mountain",
+    "CardType": "Creature",
+    "Damage": 4,
+    "Cost": 3
+  },
+  {
+    "InHand": false,
+    "Discarder": false,
+    "CardColour": "Swamp",
+    "CardType": "Creature",
+    "Damage": 2,
+    "Cost": 1
+  }
+]

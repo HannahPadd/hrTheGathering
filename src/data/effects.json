@@ -1,0 +1,18 @@
+[
+  {
+    "InHand": false,
+    "Discarder": false,
+    "CardColour": "Forest",
+    "CardType": "Effect",
+    "Damage": 0,
+    "Cost": 2
+  },
+  {
+    "InHand": false,
+    "Discarder": false,
+    "CardColour": "Island",
+    "CardType": "Effect",
+    "Damage": 0,
+    "Cost": 3
+  }
+]

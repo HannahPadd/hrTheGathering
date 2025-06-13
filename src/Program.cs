@@ -43,7 +43,6 @@ namespace hrTheGathering {
         Console.WriteLine($"{pink}   *******   {reset}");
         Console.WriteLine($"{blue}    ***    {reset}");
         Console.WriteLine($"{blue}    **    {reset}");
-        Console.WriteLine();
         Console.WriteLine("Made by Hannah Lindrob 0989357\n");
         }
 

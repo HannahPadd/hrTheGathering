@@ -1,0 +1,18 @@
+[
+  {
+    "InHand": false,
+    "Discarder": true,
+    "CardColour": "Island",
+    "CardType": "Instant",
+    "Damage": 0,
+    "Cost": 1
+  },
+  {
+    "InHand": false,
+    "Discarder": true,
+    "CardColour": "Mountain",
+    "CardType": "Instant",
+    "Damage": 2,
+    "Cost": 2
+  }
+]

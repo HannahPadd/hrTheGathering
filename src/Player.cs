@@ -5,9 +5,10 @@ namespace hrTheGathering
     {
         public int Health { get; set; }
         public string PlayerName { get; set; }
-        public Card[] Hand { get; set; }
-        public Card[] DiscardPile { get; set; }
-        public Card[] DrawPile { get; set; }
+        public List<Card> Hand { get; set; } = new List<Card>();
+        public List<Card> OnField { get; set; } = new List<Card>();
+        public List<Card> DiscardPile { get; set; } = new List<Card>();
+        public List<Card> DrawPile { get; set; } = new List<Card>();
 
         public Player(int health, string playerName)
         {
@@ -17,27 +18,54 @@ namespace hrTheGathering
 
         public void BuildDeck(DeckBuilder deckBuilder)
         {
-            
+            DrawPile = deckBuilder.Build();
         }
 
-        public void DrawHand()
+        public void DrawHand(int handSize)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < handSize; i++) {
+                if (DrawPile.Count == 0) break;
+                DrawCard();
+            }
         }
 
         public void PlayCard(Card card)
         {
-            throw new NotImplementedException();
+            if (!Hand.Contains(card))
+            {
+                throw new InvalidOperationException("Card not in hand!");
+            }
+
+            Hand.Remove(card);
+            OnField.Add(card);
         }
 
         public void DiscardCard(Card card)
         {
-            throw new NotImplementedException();
+            if (!Hand.Contains(card))
+                throw new InvalidOperationException("Card not in hand!");
+
+            Hand.Remove(card);
+            DiscardPile.Add(card);
         }
 
         public void DrawCard()
         {
-            throw new NotImplementedException();
+            if (DrawPile.Count > 0)
+            {
+                var card = DrawPile[DrawPile.Count - 1];
+                DrawPile.RemoveAt(DrawPile.Count - 1);
+                Hand.Add(card);
+            }
+            else
+            {
+                // TODO: Make the game know the player has and empty library and make them lose
+            }
+        }
+
+        public void Untap()
+        {
+            
         }
 
         public void Attack()

@@ -1,0 +1,42 @@
+[
+  {
+    "InHand": false,
+    "Discarder": false,
+    "CardColour": "Forest",
+    "CardType": "Land",
+    "Damage": 0,
+    "Cost": 0
+  },
+  {
+    "InHand": false,
+    "Discarder": false,
+    "CardColour": "Mountain",
+    "CardType": "Land",
+    "Damage": 0,
+    "Cost": 0
+  },
+  {
+    "InHand": false,
+    "Discarder": false,
+    "CardColour": "Swamp",
+    "CardType": "Land",
+    "Damage": 0,
+    "Cost": 0
+  },
+  {
+    "InHand": false,
+    "Discarder": false,
+    "CardColour": "Island",
+    "CardType": "Land",
+    "Damage": 0,
+    "Cost": 0
+  },
+  {
+    "InHand": false,
+    "Discarder": false,
+    "CardColour": "Colourless",
+    "CardType": "Land",
+    "Damage": 0,
+    "Cost": 0
+  }
+]
