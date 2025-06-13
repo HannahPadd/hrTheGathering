@@ -1,0 +1,17 @@
+{
+    "BasicForest" : {
+        "Mana" : 1
+    },
+    "BasicMountain" : {
+        "Mana" : 1
+    },
+    "BasicSwamp" : {
+        "Mana" : 1
+    },
+    "BasicIsland" : {
+        "Mana" : 1
+    },
+    "BasicColouress" : {
+        "Mana" : 1
+    }
+}
