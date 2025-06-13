@@ -8,6 +8,8 @@ namespace hrTheGathering
         public List<Player> Players { get; set; } = new List<Player>();
         public GameOptions GameOptions { get; set; }
         public Player CurrentPlayer { get; set; }
+        public Player Winner { get; set; }
+        public bool IsGameWon { get; set; }
         private int CurrentPlayerIndex { get; set; }
 
         public Game(GameOptions gameOptions)
@@ -49,6 +51,16 @@ namespace hrTheGathering
             CurrentPlayer = Players[CurrentPlayerIndex];
         }
 
+        private void CheckWinCondition()
+        {
+            Random rand = new Random();
+            if (rand.Next(0, 10) >= 8)
+            {
+                Winner = CurrentPlayer;
+                IsGameWon = true;
+            }
+        }
+
         public void RunTick()
         {
             Console.WriteLine($"It's {CurrentPlayer.PlayerName} turn");
@@ -57,13 +69,24 @@ namespace hrTheGathering
             Thread.Sleep(100);
             Console.WriteLine($"{CurrentPlayer.PlayerName} Has ended their turn.");
             Thread.Sleep(500);
+
+            // Begin Phase
+
+            // Draw Phase
+
+            // Main Phase
+
+            // Combat Phase
+
+            // End Phase
+
+            // End Turn
+
+            CheckWinCondition();
             NextPlayer();
         }
 
-        public bool CheckWinCondition()
-        {
-            return false;
-        }
+        
     }
     
 }

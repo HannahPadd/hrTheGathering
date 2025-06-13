@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using System.Threading;
 
 namespace hrTheGathering {
     class Program
@@ -19,45 +20,62 @@ namespace hrTheGathering {
             PrintWelcome();
             InitAndRunGame();
 
-            Console.WriteLine("The game is finished!");
+
             PrintWelcome();
         }
 
         public static void PrintWelcome()
         {
-        Console.WriteLine("  **     **  ");
-        Console.WriteLine(" ****   **** ");
-        Console.WriteLine(" ****** *****");
-        Console.WriteLine("  ********** ");
-        Console.WriteLine("   *******   ");
-        Console.WriteLine("    *****    ");
-        Console.WriteLine("     ***     ");
-        Console.WriteLine("      *      ");
+        // ANSI escape codes for colors
+        string pink = "\u001b[38;5;218m";
+        string blue = "\u001b[38;5;117m";
+        string white = "\u001b[38;5;15m";
+        string reset = "\u001b[0m";
+
+
+        Console.WriteLine($"{blue}   ***     ***   {reset}");
+        Console.WriteLine($"{blue}  *****   *****  {reset}");
+        Console.WriteLine($"{pink} ******* ******* {reset}");
+        Console.WriteLine($"{pink}***************{reset}");
+        Console.WriteLine($"{white}***************{reset}");
+        Console.WriteLine($"{white} ************* {reset}");
+        Console.WriteLine($"{pink}  ***********  {reset}");
+        Console.WriteLine($"{pink}   *******   {reset}");
+        Console.WriteLine($"{blue}    ***    {reset}");
+        Console.WriteLine($"{blue}    **    {reset}");
         Console.WriteLine();
-        Console.WriteLine("Made by Hannah Lindrob 0989357");
+        Console.WriteLine("Made by Hannah Lindrob 0989357\n");
         }
 
         public static void InitAndRunGame()
         {
-            GameOptions gameOptions = GameOptions.FromMode(GameModeEnum.Standard);
-            Game game = new Game(gameOptions);
+            Game game = new Game(GameOptions.FromMode(GameModeEnum.Standard));
+            Game game2 = new Game(GameOptions.FromMode(GameModeEnum.Commander));
             game.InitPlayers();
+            game2.InitPlayers();
+
+
+
             RunGame(game);
+            RunGame(game2);
         }
 
         public static void RunGame(Game game)
         {
-
+            Console.WriteLine($"Starting Game of {game.GameOptions.GameMode}\n");
             while (IsGameRunning)
             {
                 game.RunTick();
 
                 // The game is over if this is true
-                if (game.CheckWinCondition())
+                if (game.IsGameWon)
                 {
                     break;
                 }
             }
+
+            Console.WriteLine($"{game.Winner} has won the game 🥳");
+            Console.WriteLine($"The game is finished\n");
         }
     }
 }
